@@ -14,18 +14,12 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		//parent::Controller();
-		//$this->load->library('encrypt');
-
-		//$encrypted_string = $this->encrypt->encode($msg, $key);
-
-
-		//session_start();
+		session_start();
 
 		if(!$this->session->userdata('login_id')) {
 			$this->load->view('login');
 		}
-		else { // 有登入的話就導到正確的網頁
+		else { 
 			$this->load->view('reports');
 		}
 	}
@@ -33,7 +27,6 @@ class Login extends CI_Controller {
 	public function submit()
 	{
 		$this->load->model('Login_model');
-		#$this->load->view('dvds/browsing');
 		$result = $this->Login_model->getPasswd($this->input->post('inputID'));
 
 		if (isset($result[0]) && $this->input->post('inputPasswd') == $result[0]['sPassword']) {

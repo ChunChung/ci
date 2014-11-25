@@ -14,29 +14,29 @@
     
     <!-- Fonts -->
         <!-- Font awesome - icon font -->
-        <link href="netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome_2.css" rel="stylesheet">
+        <link href="/ci/scripts/netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome_2.css" rel="stylesheet">
         <!-- Roboto -->
-        <link href='fonts.googleapis.com/css_3.css' rel='stylesheet' type='text/css'>
+        <link href='/ci/scripts/fonts.googleapis.com/css_3.css' rel='stylesheet' type='text/css'>
     
     <!-- Stylesheets -->
         <!-- jQuery UI --> 
-        <link href="code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+        <link href="/ci/scripts/code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
 
         <!-- Mobile menu -->
-        <link href="css/gozha-nav_2.css" rel="stylesheet" />
+        <link href="/ci/scripts/css/gozha-nav_2.css" rel="stylesheet" />
         <!-- Select -->
-        <link href="css/external/jquery.selectbox_2.css" rel="stylesheet" />
+        <link href="/ci/scripts/css/external/jquery.selectbox_2.css" rel="stylesheet" />
         <!-- Swiper slider -->
-        <link href="css/external/idangerous.swiper.css" rel="stylesheet" />
+        <link href="/ci/scripts/css/external/idangerous.swiper.css" rel="stylesheet" />
         <!-- Magnific-popup -->
-        <link href="css/external/magnific-popup.css" rel="stylesheet" />
+        <link href="/ci/scripts/css/external/magnific-popup.css" rel="stylesheet" />
 
     
         <!-- Custom -->
-        <link href="css/style_2.css" rel="stylesheet" />
+        <link href="/ci/scripts/css/style_2.css" rel="stylesheet" />
 
         <!-- Modernizr --> 
-        <script src="js/external/modernizr.custom_2.js"></script>  
+        <script src="/ci/scripts/js/external/modernizr.custom_2.js"></script>  
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
     <!--[if lt IE 9]> 
@@ -52,8 +52,8 @@
         <header class="header-wrapper">
             <div class="container">
                 <!-- Logo link-->
-                <a href='http://amovie.designzway.com/index.html' class="logo">
-                    <img alt='logo' src="images/logo.png">
+                <a href='/ci/index.php/' class="logo">
+                    <img alt='logo' src="/ci/scripts/images/logo.png">
                 </a>
 
                 <!-- Main website navigation-->
@@ -86,25 +86,25 @@
         <section class="container">
             <div class="col-sm-8 col-md-9">
                 <div class="movie">
-                    <h2 class="page-heading">The Hobbit: An Unexpected Journey</h2>
+				<h2 class="page-heading"><?php echo $Title;?></h2>
 
                     <div class="movie__info">
                         <div class="col-sm-6 col-md-4 movie-mobile">
                             <div class="movie__images">
-                                <img alt='' src="images/movie/single-movie.jpg">
+							<img alt='' src="<?php echo $img_url?>">
                             </div>
 
                         </div>
 
                         <div class="col-sm-6 col-md-8">
-                            <p class="movie__time">169 min</p>
+						<p class="movie__time"><?php echo $Duration;?> min</p>
                             <p class="movie__option"><strong>Year: </strong><a>2012</a>
                             </p>
 
-                            <p class="movie__option"><strong>Release date: </strong>December 12, 2012</p>
-                            <p class="movie__option"><strong>Director: </strong><a>Peter Jackson</a>
+							<p class="movie__option"><strong>Release date: </strong><?php echo $ReleaseData;?></p>
+							<p class="movie__option"><strong>Director: </strong><a><?php echo $DirectorName;?></a>
                             </p>
-                            <p class="movie__option"><strong>Actors: </strong><a >Martin Freeman</a>, <a >Ian McKellen</a>, <a >Richard Armitage</a>, <a >Ken Stott</a>, <a >Graham McTavish</a>, <a >Cate Blanchett</a>, <a >Hugo Weaving</a>, <a >Ian Holm</a>, <a >Elijah Wood</a>  <a >...</a>
+							<p class="movie__option"><strong>Actors: </strong><a ><?php echo $FName." ".$LName;?></a><a >...</a>
                             </p>
 
                         </div>
@@ -114,7 +114,7 @@
 
                     <h2 class="page-heading">The plot</h2>
 
-                    <p class="movie__describe">Bilbo Baggins is swept into a quest to reclaim the lost Dwarf Kingdom of Erebor from the fearsome dragon Smaug. Approached out of the blue by the wizard Gandalf the Grey, Bilbo finds himself joining a company of thirteen dwarves led by the legendary warrior, Thorin Oakenshield. Their journey will take them into the Wild; through treacherous lands swarming with Goblins and Orcs, deadly Wargs and Giant Spiders, Shapeshifters and Sorcerers. Although their goal lies to the East and the wastelands of the Lonely Mountain first they must escape the goblin tunnels, where Bilbo meets the creature that will change his life forever ... Gollum. Here, alone with Gollum, on the shores of an underground lake, the unassuming Bilbo Baggins not only discovers depths of guile and courage that surprise even him, he also gains possession of Gollum's "precious" ring that holds unexpected and useful qualities ... A simple, gold ring that is tied to the fate of all Middle-earth in ways Bilbo cannot begin to ...</p>
+					<p class="movie__describe"><?php echo $Description; ?></p>
 
        </div>
 
@@ -192,31 +192,31 @@
 
 	<!-- JavaScript-->
         <!-- jQuery 1.9.1--> 
-        <script src="ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min_2.js"></script>
-        <script>window.jQuery || document.write('<script src="js/external/jquery-1.10.1.min_2.js"><\/script>')</script>
+        <script src="/ci/scripts/ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min_2.js"></script>
+        <script>window.jQuery || document.write('<script src="/ci/scripts/js/external/jquery-1.10.1.min_2.js"><\/script>')</script>
         <!-- Migrate --> 
-        <script src="js/external/jquery-migrate-1.2.1.min_2.js"></script>
+        <script src="/ci/scripts/js/external/jquery-migrate-1.2.1.min_2.js"></script>
         <!-- jQuery UI -->
-        <script src="code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="/ci/scripts/code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <!-- Bootstrap 3--> 
-        <script src="netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min_2.js"></script>
+        <script src="/ci/scripts/netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min_2.js"></script>
 
         <!-- Mobile menu -->
-        <script src="js/jquery.mobile.menu_2.js"></script>
+        <script src="/ci/scripts/js/jquery.mobile.menu_2.js"></script>
          <!-- Select -->
-        <script src="js/external/jquery.selectbox-0.2.min_2.js"></script>
+        <script src="/ci/scripts/js/external/jquery.selectbox-0.2.min_2.js"></script>
 
         <!-- Stars rate -->
-        <script src="js/external/jquery.raty_2.js"></script>
+        <script src="/ci/scripts/js/external/jquery.raty_2.js"></script>
         <!-- Swiper slider -->
-        <script src="js/external/idangerous.swiper.min.js"></script>
+        <script src="/ci/scripts/js/external/idangerous.swiper.min.js"></script>
         <!-- Magnific-popup -->
-        <script src="js/external/jquery.magnific-popup.min.js"></script>  
+        <script src="/ci/scripts/js/external/jquery.magnific-popup.min.js"></script>  
 
         <!--*** Google map  ***-->
-        <script src="maps.google.com/maps/api/js.JS"></script> 
+        <script src="/ci/scripts/maps.google.com/maps/api/js.JS"></script> 
         <!--*** Google map infobox  ***-->
-        <script src="js/external/infobox.js"></script> 
+        <script src="/ci/scripts/js/external/infobox.js"></script> 
 
         <!-- Share buttons -->
         <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
