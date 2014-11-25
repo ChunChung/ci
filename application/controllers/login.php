@@ -23,10 +23,10 @@ class Login extends CI_Controller {
 		//session_start();
 
 		if(!$this->session->userdata('login_id')) {
-			$this->load->view('employees/login');
+			$this->load->view('login');
 		}
 		else { // 有登入的話就導到正確的網頁
-			$this->load->view('dvds/browsing');
+			$this->load->view('reports');
 		}
 	}
 
