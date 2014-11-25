@@ -37,7 +37,11 @@ class Login extends CI_Controller {
 
 		#$this->load->database();
 		echo $this->input->post('inputID');
-		echo $this->Login_model->getPasswd($this->input->post('inputID'));
+		//foreach( $this->Login_model->getPasswd($this->input->post('inputID') as $row) {
+		//	echo $row;
+		//}
+		print_r($this->Login_model->getPasswd($this->input->post('inputID')));
+
 
 	}
 }
