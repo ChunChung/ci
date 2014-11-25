@@ -14,22 +14,22 @@
     
     <!-- Fonts -->
         <!-- Font awesome - icon font -->
-        <link href="netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome_4.css" rel="stylesheet">
+        <link href="/ci/scripts/netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome_4.css" rel="stylesheet">
         <!-- Roboto -->
-        <link href='fonts.googleapis.com/css_5.css' rel='stylesheet' type='text/css'>
+        <link href='/ci/scripts/fonts.googleapis.com/css_5.css' rel='stylesheet' type='text/css'>
     
     <!-- Stylesheets -->
 
         <!-- Mobile menu -->
-        <link href="css/gozha-nav_4.css" rel="stylesheet" />
+        <link href="/ci/scripts/css/gozha-nav_4.css" rel="stylesheet" />
         <!-- Select -->
-        <link href="css/external/jquery.selectbox_4.css" rel="stylesheet" />
+        <link href="/ci/scripts/css/external/jquery.selectbox_4.css" rel="stylesheet" />
     
         <!-- Custom -->
-        <link href="css/style_4.css" rel="stylesheet" />
+        <link href="/ci/scripts/css/style_4.css" rel="stylesheet" />
 
         <!-- Modernizr --> 
-        <script src="js/external/modernizr.custom_4.js"></script>
+        <script src="/ci/scripts/js/external/modernizr.custom_4.js"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
     <!--[if lt IE 9]> 
@@ -46,14 +46,14 @@
             <header class="header-wrapper header-wrapper--home">
             <div class="container">
                 <!-- Logo link-->
-                <a href='index.html' class="logo">
-                    <img alt='logo' src="images/logo.png">
+                <a href='index.php' class="logo">
+                    <img alt='logo' src="/ci/scripts/images/logo.png">
                 </a>
                 
                 <!-- Main website navigation-->
                 <nav id="navigation-box">
                     <!-- Toggle for mobile menu mode -->
-                    <a href="index.html#" id="navigation-toggle">
+                    <a href="index.php" id="navigation-toggle">
                         <span class="menu-icon">
                             <span class="icon-toggle" role="button" aria-label="Toggle Navigation">
                               <span class="lines"></span>
@@ -70,7 +70,7 @@
                   
                    <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--danger btn--book login-window">Adminstrative Reports</a>
                     <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--book login-window">Book Returns</a>
-                      <a href="login.html" class="btn btn--sign login-window">Sign in</a>
+                      <a href="login.php" class="btn btn--sign login-window">Sign in</a>
                     <a href="movie-page-left.html#" class="btn btn--sign login-window">Log out</a>
                 </div>
 
@@ -79,20 +79,19 @@
         
  <hr><hr><hr>
         <!-- Main content -->
-                <form id="login-form" class="login" method='get' novalidate=''>
+                <form id="login-form" class="login" method='post' novalidate='' action='login/submit'>
                     <p class="login__title">sign in <br><span class="login-edition">welcome to Quichunom DVD Rentals</span></p>
                
                     <div class="field-wrap">
-                    <input type='email' placeholder='Email' name='user-email' class="login__input">
-                    <input type='password' placeholder='Password' name='user-password' class="login__input">
+                    <input type='number' placeholder='Salesperson ID' name='inputID' class="login__input">
+                    <input type='password' placeholder='Password' name='inputPasswd' class="login__input">
 
                     <input type='checkbox' id='#informed' class='login__check styled'>
                     <label for='#informed' class='login__check-info'>remember me</label>
                      </div>
                     
                     <div class="login__control">
-                        <button type='submit' class="btn btn-md btn--warning btn--wider">sign in</button>
-                  
+                        <button class="btn btn-md btn--warning btn--wider">sign in</button>
                 </form>
         
         <div class="clearfix"></div>
@@ -113,24 +112,24 @@
 
 	<!-- JavaScript-->
         <!-- jQuery 1.9.1--> 
-        <script src="ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min_4.js"></script>
+        <script src="/ci/scripts/ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min_4.js"></script>
         <script>window.jQuery || document.write('<script src="js/external/jquery-1.10.1.min_4.js"><\/script>')</script>
         <!-- Migrate --> 
-        <script src="js/external/jquery-migrate-1.2.1.min_4.js"></script>
+        <script src="/ci/scripts/js/external/jquery-migrate-1.2.1.min_4.js"></script>
         <!-- Bootstrap 3--> 
-        <script src="netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min_4.js"></script>
+        <script src="/ci/scripts/netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min_4.js"></script>
 
         <!-- Mobile menu -->
-        <script src="js/jquery.mobile.menu_4.js"></script>
+        <script src="/ci/scripts/js/jquery.mobile.menu_4.js"></script>
          <!-- Select -->
-        <script src="js/external/jquery.selectbox-0.2.min_4.js"></script>
+        <script src="/ci/scripts/js/external/jquery.selectbox-0.2.min_4.js"></script>
         <!-- Form element -->
-        <script src="js/external/form-element_4.js"></script>
+        <script src="/ci/scripts/js/external/form-element_4.js"></script>
         <!-- Form validation -->
-        <script src="js/form_4.js"></script>
+        <script src="/ci/scripts/js/form_4.js"></script>
 
         <!-- Custom -->
-        <script src="js/custom_4.js"></script>
+        <script src="/ci/scripts/js/custom_4.js"></script>
         
 
 </body>

@@ -53,7 +53,7 @@
             <div class="container">
                 <!-- Logo link-->
                 <a href='index.php' class="logo">
-                    <img alt='logo' src="images/logo.png">
+                    <img alt='logo' src="/ci/scripts/images/logo.png">
                 </a>
                 
                 <!-- Main website navigation-->

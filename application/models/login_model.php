@@ -5,6 +5,9 @@ class Login_model extends CI_Model {
 	{
 		// Call the Model constructor
 		parent::__construct();
+		//$dsn = 'mysql://chunchung:IS@&!)2014fall@140.113.235.191/chunchung_cs';
+
+
 		$this->load->database();
 	}
 
@@ -16,7 +19,13 @@ class Login_model extends CI_Model {
 		$query = $this->db->query('SELECT * FROM `Login` WHERE `Salesperson_SalespersonID` = 1');
 		print_r($query->result());
 
-		echo $this->db->last_query(); die;
+		//$link = mysqli_connect("dbhome.cs.nctu.edu.tw", "chunchung_cs", "IS@&!)2014fall") or die("Could not connect : " . mysql_error()); 
+		
+		//$result = mysqli_query($query) or die("Query failed : " . mysql_error()); 
+
+
+
+		#echo $this->db->last_query(); die;
     	return $query->result_array();
 	}
 
