@@ -75,7 +75,7 @@
                 <div class="control-panel">
                    <a href="reports.html" class="btn btn-md btn--warning btn--danger btn--book ">Adminstrative Reports</a>
                     <a href="http://www.google.com" class="btn btn-md btn--warning btn--book ">Book Returns</a>
-                      <a href="login.php" class="btn btn--sign ">Sign in</a>
+                      <a href="/ci/index.php/login" class="btn btn--sign ">Sign in</a>
                     <a href="movie-page-left.html#" class="btn btn--sign ">Log out</a>
                 </div>
 

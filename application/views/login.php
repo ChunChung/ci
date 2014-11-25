@@ -46,14 +46,14 @@
             <header class="header-wrapper header-wrapper--home">
             <div class="container">
                 <!-- Logo link-->
-                <a href='index.php' class="logo">
+                <a href='/ci/index.php' class="logo">
                     <img alt='logo' src="/ci/scripts/images/logo.png">
                 </a>
                 
                 <!-- Main website navigation-->
                 <nav id="navigation-box">
                     <!-- Toggle for mobile menu mode -->
-                    <a href="index.php" id="navigation-toggle">
+                    <a href="/ci/index.php" id="navigation-toggle">
                         <span class="menu-icon">
                             <span class="icon-toggle" role="button" aria-label="Toggle Navigation">
                               <span class="lines"></span>
@@ -70,7 +70,7 @@
                   
                    <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--danger btn--book login-window">Adminstrative Reports</a>
                     <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--book login-window">Book Returns</a>
-                      <a href="login.php" class="btn btn--sign login-window">Sign in</a>
+                      <a href="/ci/index.php/login" class="btn btn--sign login-window">Sign in</a>
                     <a href="movie-page-left.html#" class="btn btn--sign login-window">Log out</a>
                 </div>
 

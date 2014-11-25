@@ -34,13 +34,11 @@ class Login extends CI_Controller {
 	{
 		$this->load->model('Login_model');
 		#$this->load->view('dvds/browsing');
+		$result = $this->Login_model->getPasswd($this->input->post('inputID'));
 
-		echo $this->input->post('inputID');
-		//foreach( $this->Login_model->getPasswd($this->input->post('inputID') as $row) {
-		//	echo $row;
-		//}
-		print_r($this->Login_model->getPasswd($this->input->post('inputID')));
-
-
+		if (isset($result[0]) && $this->input->post('inputPasswd') == $result[0]['sPassword']) {
+			$this->session->set_userdata('login_id', $this->input->post('inputID'));
+		}
+		redirect('/login');
 	}
 }

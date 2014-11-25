@@ -48,9 +48,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'dbhome.cs.nctu.edu.tw';
-$db['default']['username'] = 'chunchung_cs';
-$db['default']['password'] = 'IS@&!)2014fall';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'root';
 $db['default']['database'] = 'chunchung_cs';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
