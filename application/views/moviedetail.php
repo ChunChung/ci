@@ -90,7 +90,7 @@
                     <div class="movie__info">
                         <div class="col-sm-6 col-md-4 movie-mobile">
                             <div class="movie__images">
-							<img alt='' src="<?php if(isset($img_url)) echo $img_url?>">
+							<img alt='' src="<?php if(isset($PictureURL)) echo $PictureURL?>">
                             </div>
 
                         </div>
@@ -125,56 +125,31 @@
 
        </div>
 
+
                 <h2 class="page-heading">Available Stores </h2>
                 <div class="choose-container">
 
 
                     <div class="clearfix"></div>
+					<div class="time-select">
+            
 
-                    <div class="time-select">
-                        <div class="time-select__group group--first">
-                            <div class="col-sm-4">
-                                <p class="time-select__place">Cineworld</p>
-                            </div>
-
-                        </div>
-
-                        <div class="time-select__group">
-                            <div class="col-sm-4">
-                                <p class="time-select__place">Empire</p>
-                            </div>
-                          
-                        </div>
-
-                        <div class="time-select__group">
-                            <div class="col-sm-4">
-                                <p class="time-select__place">Curzon</p>
-                            </div>
-                          
-                        </div>
-
-                        <div class="time-select__group">
-                            <div class="col-sm-4">
-                                <p class="time-select__place">Odeon</p>
-                            </div>
-                          
-                        </div>
-
-                        <div class="time-select__group group--last">
-                            <div class="col-sm-4">
-                                <p class="time-select__place">Picturehouse</p>
-                            </div>
-                          
-                        </div>
-                    </div>
-
-                    
-
-                    
+					<?php
+					foreach( $Stores as $row) {
+						echo "<div class=\"time-select__group\">";
+						echo "<div class=\"col-sm-4\">";
+                        echo "<p class=\"time-select__place\">". $row['Address'] ."</p>";
+						echo "</div>";
+						echo "<ul class=\"col-sm-8 items-wrap\">";
+						echo "<li class=\"time-select__item\" data-time='" . $row['Quantity'] ."'>". $row['Quantity'] ."</li>";
+						echo "</ul>";
+						echo "</div>";
+					
+					}
+					?>
+                   	</div> 
                 </div>
             </div>
-
-            
 
         </section>
 

@@ -38,16 +38,32 @@ class Movies_model extends CI_Model {
 		return $result;
 	}
 
+	function getMovieStores($MovieID) {
+		$result = Array();
+
+		$query = $this->db->query('
+			SELECT Store.Address, Movie_has_Store.Quantity FROM Store, Movie_has_Store WHERE Movie_has_Store.Store_StoreID = Store.StoreID and Movie_has_Store.Movie_MovieID = 
+			'.$MovieID);
+
+		foreach ($query->result() as $row) {
+			$stores = Array();
+			$stores['Address'] = $row->Address;
+			$stores['Quantity'] = $row->Quantity;
+			array_push($result, $stores);
+		}
+		return $result;
+	}
+
 	function getMovies() {
 		$result = Array();
 		$query = $this->db->query('
-			SELECT Movie.MovieID, Movie.Duration, Movie.img_url FROM Movie Order by Movie.IMDBRating limit 6'
+			SELECT Movie.MovieID, Movie.Duration, Movie.PictureURL FROM Movie Order by Movie.IMDBRating limit 6'
 			);
 		foreach ($query->result() as $row) {
 			$movie =  Array();
 			$movie['MovieID'] = $row->MovieID;
 			$movie['Duration'] = $row->Duration;
-			$movie['Img'] = $row->img_url;
+			$movie['PictureURL'] = $row->PictureURL;
 			$movie['Genre'] = implode('|' , $this->getGenre($row->MovieID));
 			array_push($result, $movie);
 		}

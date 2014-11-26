@@ -52,7 +52,7 @@
         <header class="header-wrapper header-wrapper--home">
             <div class="container">
                 <!-- Logo link-->
-                <a href='index.php' class="logo">
+                <a href='/ci/index.php' class="logo">
                     <img alt='logo' src="/ci/scripts/images/logo.png">
                 </a>
                 
@@ -76,7 +76,7 @@
                    <a href="reports.html" class="btn btn-md btn--warning btn--danger btn--book ">Adminstrative Reports</a>
                     <a href="http://www.google.com" class="btn btn-md btn--warning btn--book ">Book Returns</a>
                       <a href="/ci/index.php/login" class="btn btn--sign ">Sign in</a>
-                    <a href="movie-page-left.html#" class="btn btn--sign ">Log out</a>
+                    <a href="/ci/index.php/login/logout" class="btn btn--sign ">Log out</a>
                 </div>
 
             </div>
@@ -99,7 +99,7 @@
 						if(isset($Hits)) {
 							foreach($Hits as $row) {
 								echo "<div class=\"movie-beta__item hidden-xs\">";
-								echo "<img alt='' src=\"". $row['Img']. "\">";
+								echo "<img alt='' src=\"". $row['PictureURL']. "\">";
 								echo "<ul class=\"movie-beta__info\">";
 								echo "<li>";
 								echo "<p class=\"movie__time\">" . $row['Duration'] ."min</p>";

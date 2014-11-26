@@ -25,6 +25,8 @@ class Movies extends CI_Controller {
 
 		$data = $this->Movies_model->getMovieDetails($movieID)[0];
 		$data['Actors'] = $this->Movies_model->getMovieActors($data['MovieID']);
+		$data['Stores'] = $this->Movies_model->getMovieStores($data['MovieID']);
+		//print_r($data);
 		$this->load->view('moviedetail', $data);
 	}
 }
