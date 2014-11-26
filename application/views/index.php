@@ -99,7 +99,7 @@
 						if(isset($Hits)) {
 							foreach($Hits as $row) {
 								echo "<div class=\"movie-beta__item hidden-xs\">";
-								echo "<img alt='' src=\"". $row['PictureURL']. "\">";
+								echo "<img alt='' src=\"". $row['PictureURL']. "\" height=\"300\" width=\"190\">";
 								echo "<ul class=\"movie-beta__info\">";
 								echo "<li>";
 								echo "<p class=\"movie__time\">" . $row['Duration'] ."min</p>";
@@ -154,160 +154,32 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-8 col-md-9">
-                        <!-- Movie variant with time -->
-                            <div class="movie movie--test movie--test--dark movie--test--left">
-                                <div class="movie__images">
-                                    <a href="http://amovie.designzway.com/movie-page-left.html" class="movie-beta__link">
-                                        <img alt='' src="images/movie/movie-time8.jpg">
-                                    </a>
-                                </div>
+					 <?php 
+						$right = 0;
+						$color = 0;
+						$leftRight = ['movie--test--left'];
+						$darkLight = ['movie--test--dark', 'movie--test--light', "movie--test--light", "movie--test--dark"];
+						if(isset($Ratings)) {
+							foreach($Ratings as $row) {
+								echo "<div class=\"movie movie--test ". $darkLight[$color%4] . " " . $leftRight[0] ."\">";
+									echo "<div class=\"movie__images\">";
+										echo "<a href=\"/ci/index.php/movies/index/" .$row['MovieID']. "\" class=\"movie-beta__link\">";
+                                        	echo "<img alt='' src=\"". $row['PictureURL']."\" height=\"212\" width=\"212\">";
+										echo "</a>";
+									echo "</div>";
+									echo "<div class=\"movie__info\">";
+										echo "<a href=\"/ci/index.php/movies/index/" .$row['MovieID']. "\" class=\"movie__title\">" . $row['Title'] . "</a>";
+										echo "<p class=\"movie__time\">" . $row['Duration'] . "min</p>";
+										echo "<p class=\"movie__option\">" . $row['Genre'] . "</p>";
+									echo "</div>";
+								echo "</div>";
+								$color +=1;
+							}
+						}
 
-                                <div class="movie__info">
-                                    <a href='http://amovie.designzway.com/movie-page-left.html' class="movie__title">Gravity (2013)  </a>
+					 ?>
 
-                                    <p class="movie__time">91 min</p>
 
-                                    <p class="movie__option"><a href="index.html#">Sci-Fi</a> | <a href="index.html#">Thriller</a> | <a href="index.html#">Drama</a></p>
-                                                
-                                </div>
-                            </div>
-                         <!-- Movie variant with time -->
-
-                         <!-- Movie variant with time -->
-                            <div class="movie movie--test movie--test--light movie--test--left">
-                                <div class="movie__images">
-                                    <a href="http://amovie.designzway.com/movie-page-left.html" class="movie-beta__link">
-                                    <img alt='' src="images/movie/movie-time1.jpg">
-                                    </a>
-                                </div>
-
-                                <div class="movie__info">
-                                    <a href='http://amovie.designzway.com/movie-page-left.html' class="movie__title">The Hobbit: The Desolation of Smaug (2013)  </a>
-
-                                    <p class="movie__time">169 min</p>
-
-                                    <p class="movie__option"><a href="index.html#">Adventure</a> | <a href="index.html#">Fantasy</a> | <a href="index.html#">Drama</a></p>
-            
-                                </div>
-                            </div>
-                         <!-- Movie variant with time -->
-
-                         <!-- Movie variant with time -->
-                            <div class="movie movie--test movie--test--light movie--test--left">
-                                <div class="movie__images">
-                                    <a href="http://amovie.designzway.com/movie-page-left.html" class="movie-beta__link">
-                                    <img alt='' src="images/movie/movie-time9.jpg">
-                                    </a>
-                                </div>
-
-                                <div class="movie__info">
-                                    <a href='http://amovie.designzway.com/movie-page-left.html' class="movie__title">The Hunger Games: Catching Fire (2013)   </a>
-
-                                    <p class="movie__time">146 min</p>
-
-                                    <p class="movie__option"><a href="index.html#">Action</a> | <a href="index.html#">Adventure</a> | <a href="index.html#">Sci-Fi</a></p>
-                                    
-                                             
-                                </div>
-                            </div>
-                         <!-- Movie variant with time -->
-
-                         <!-- Movie variant with time -->
-                            <div class="movie movie--test movie--test--dark movie--test--left">
-                                <div class="movie__images">
-                                    <a href="http://amovie.designzway.com/movie-page-left.html" class="movie-beta__link">
-                                    <img alt='' src="images/movie/movie-time10.jpg">
-                                    </a>
-                                </div>
-
-                                <div class="movie__info">
-                                    <a href='http://amovie.designzway.com/movie-page-left.html' class="movie__title">Thor: The Dark World (2013) </a>
-
-                                    <p class="movie__time">112 min</p>
-
-                                    <p class="movie__option"><a href="index.html#">Action</a> | <a href="index.html#">Adventure</a> | <a href="index.html#">Fantasy</a></p>
-                                           
-                                </div>
-                            </div>
-                         <!-- Movie variant with time -->
-
-                         <!-- Movie variant with time -->
-                            <div class="movie movie--test movie--test--dark movie--test--left">
-                                <div class="movie__images">
-                                    <a href="http://amovie.designzway.com/movie-page-left.html" class="movie-beta__link">
-                                    <img alt='' src="images/movie/movie-time11.jpg">
-                                    </a>
-                                </div>
-
-                                <div class="movie__info">
-                                    <a href='http://amovie.designzway.com/movie-page-left.html' class="movie__title">World War Z (2013)  </a>
-
-                                    <p class="movie__time">116 min</p>
-
-                                    <p class="movie__option"><a href="index.html#">Action</a> | <a href="index.html#">Adventure</a> | <a href="index.html#">Horror</a></p>
-                                             
-                                </div>
-                            </div>
-                         <!-- Movie variant with time -->
-
-                         <!-- Movie variant with time -->
-                            <div class="movie movie--test movie--test--light movie--test--left">
-                                <div class="movie__images">
-                                    <a href="http://amovie.designzway.com/movie-page-left.html" class="movie-beta__link">
-                                    <img alt='' src="images/movie/movie-time12.jpg">
-                                    </a>
-                                </div>
-
-                                <div class="movie__info">
-                                    <a href='http://amovie.designzway.com/movie-page-left.html' class="movie__title">Prisoners (2013) </a>
-
-                                    <p class="movie__time">153 min</p>
-
-                                    <p class="movie__option"><a href="index.html#">Crime</a> | <a href="index.html#">Thriller</a> | <a href="index.html#">Drama</a></p>
-                               
-                                </div>
-                            </div>
-                         <!-- Movie variant with time -->
-
-                         <!-- Movie variant with time -->
-                            <div class="movie movie--test movie--test--light movie--test--left">
-                                <div class="movie__images">
-                                    <a href="http://amovie.designzway.com/movie-page-left.html" class="movie-beta__link">
-                                    <img alt='' src="images/movie/movie-time13.jpg">
-                                    </a>
-                                </div>
-
-                                <div class="movie__info">
-                                    <a href='http://amovie.designzway.com/movie-page-left.html' class="movie__title">This Is the End (2013)   </a>
-
-                                    <p class="movie__time">107 min</p>
-
-                                    <p class="movie__option"><a href="index.html#">Comedy</a> | <a href="index.html#">Fantasy</a></p>
-                                    
-                                                
-                                </div>
-                            </div>
-                         <!-- Movie variant with time -->
-
-                         <!-- Movie variant with time -->
-                            <div class="movie movie--test movie--test--dark movie--test--left">
-                                <div class="movie__images">
-                                    <a href="http://amovie.designzway.com/movie-page-left.html" class="movie-beta__link">
-                                    <img alt='' src="images/movie/movie-time14.jpg">
-                                    </a>
-                                </div>
-
-                                <div class="movie__info">
-                                    <a href='http://amovie.designzway.com/movie-page-left.html' class="movie__title">The Internship (2013)  </a>
-
-                                    <p class="movie__time">112 min</p>
-
-                                    <p class="movie__option"><a href="index.html#">Comedy</a></p>
-                                    
-                                            
-                                </div>
-                            </div>
-                         <!-- Movie variant with time -->
 
 
                     </div>

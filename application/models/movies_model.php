@@ -57,7 +57,7 @@ class Movies_model extends CI_Model {
 	function getMovies() {
 		$result = Array();
 		$query = $this->db->query('
-			SELECT Movie.MovieID, Movie.Duration, Movie.PictureURL FROM Movie Order by Movie.IMDBRating limit 6'
+			SELECT Movie.MovieID, Movie.Duration, Movie.PictureURL FROM Movie Order by Movie.ReleaseDate limit 6 '
 			);
 		foreach ($query->result() as $row) {
 			$movie =  Array();
@@ -69,6 +69,25 @@ class Movies_model extends CI_Model {
 		}
 
 		return $result;
+	}
+
+	function getMoviesByRating() {
+		$result = Array();
+		$query = $this->db->query('
+			SELECT Movie.MovieID, Movie.Duration, Movie.Title, Movie.PictureURL FROM Movie Order by Movie.ReleaseDate limit 6 '
+			);
+		foreach ($query->result() as $row) {
+			$movie =  Array();
+			$movie['MovieID'] = $row->MovieID;
+			$movie['Duration'] = $row->Duration;
+			$movie['PictureURL'] = $row->PictureURL;
+			$movie['Title'] = $row->Title;
+			$movie['Genre'] = implode('|' , $this->getGenre($row->MovieID));
+			array_push($result, $movie);
+		}
+
+		return $result;
+	
 	}
 
 	function getGenre($MovieID) {

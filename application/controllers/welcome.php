@@ -22,9 +22,7 @@ class Welcome extends CI_Controller {
 
 		$this->load->model('Movies_model');                                     
 		$data['Hits'] = $this->Movies_model->getMovies();              
-		//$data['Actors'] = $this->Movies_model->getMovieActors($data['MovieID']);
-		//$this->load->view('moviedetail', $data);                                
-
+		$data['Ratings'] = $this->Movies_model->getMoviesByRating();              
 		$this->load->view('index', $data);
 	}
 }
