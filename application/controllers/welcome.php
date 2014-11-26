@@ -19,9 +19,12 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('index');
+
+		$this->load->model('Movies_model');                                     
+		$data['Hits'] = $this->Movies_model->getMovies();              
+		//$data['Actors'] = $this->Movies_model->getMovieActors($data['MovieID']);
+		//$this->load->view('moviedetail', $data);                                
+
+		$this->load->view('index', $data);
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

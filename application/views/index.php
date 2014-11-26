@@ -95,95 +95,26 @@
                     Our Rental Hits
                 </div>
                  <div class="col-sm-12 change--col">
-                     <div class="movie-beta__item ">
-                        <img alt='' src="/ci/scripts/images/movie/movie-sample1.jpg">
+					 <?php 
+						if(isset($Hits)) {
+							foreach($Hits as $row) {
+								echo "<div class=\"movie-beta__item hidden-xs\">";
+								echo "<img alt='' src=\"". $row['Img']. "\">";
+								echo "<ul class=\"movie-beta__info\">";
+								echo "<li>";
+								echo "<p class=\"movie__time\">" . $row['Duration'] ."min</p>";
+								echo "<p>" . $row['Genre'] . "</p>";
+								echo "</li>";
+								echo "<li class=\"last-block\">";
+								echo "<a href=\"/ci/index.php/movies/index/" . $row['MovieID']. "\" class=\"slide__link\">more</a>";
+								echo "</li>";
+								echo "</ul>";
+								echo "</div>";
+						
+							}
+						}
 
-                         <ul class="movie-beta__info">
-                           
-                             <li>
-                                <p class="movie__time">169 min</p>
-                                <p>Adventure | Drama | Fantasy </p>
-                             </li>
-                             <li class="last-block">
-                                 <a href="http://amovie.designzway.com/movie-page-left.html" class="slide__link">more</a>
-                             </li>
-                         </ul>
-                     </div>
-                     <div class="movie-beta__item second--item">
-                         <img alt='' src="images/movie/movie-sample2.jpg">
-                       
-
-                         <ul class="movie-beta__info">
-                            <li>
-                                <p class="movie__time">169 min</p>
-                                <p>Adventure | Drama | Fantasy </p>
-                               
-                             </li>
-                             <li class="last-block">
-                                 <a href="http://amovie.designzway.com/movie-page-left.html" class="slide__link">more</a>
-                             </li>
-                         </ul>
-                     </div>
-                     <div class="movie-beta__item third--item">
-                         <img alt='' src="images/movie/movie-sample3.jpg">
-                        
-
-                         <ul class="movie-beta__info">
-                           
-                             <li>
-                                <p class="movie__time">169 min</p>
-                                <p>Adventure | Drama | Fantasy </p>
-                        
-                             </li>
-                             <li class="last-block">
-                                 <a href="http://amovie.designzway.com/movie-page-left.html" class="slide__link">more</a>
-                             </li>
-                         </ul>
-                     </div>
-                     <div class="movie-beta__item hidden-xs">
-                         <img alt='' src="images/movie/movie-sample4.jpg">
-                         <ul class="movie-beta__info">
-                           
-                             <li>
-                                <p class="movie__time">169 min</p>
-                                <p>Adventure | Drama | Fantasy </p>
-
-                             </li>
-                             <li class="last-block">
-                                 <a href="http://amovie.designzway.com/movie-page-left.html" class="slide__link">more</a>
-                             </li>
-                         </ul>
-                     </div>
-                     <div class="movie-beta__item hidden-xs hidden-sm">
-                         <img alt='' src="images/movie/movie-sample5.jpg">
-         
-                         <ul class="movie-beta__info">
-
-                             <li>
-                                <p class="movie__time">169 min</p>
-                                <p>Adventure | Drama | Fantasy </p>
-                                <p>38 comments</p>
-                             </li>
-                             <li class="last-block">
-                                 <a href="http://amovie.designzway.com/movie-page-left.html" class="slide__link">more</a>
-                             </li>
-                         </ul>
-                     </div>
-                     <div class="movie-beta__item hidden-xs hidden-sm">
-                         <img alt='' src="images/movie/movie-sample6.jpg">
-                
-                         <ul class="movie-beta__info">
-                           
-                             <li>
-                                <p class="movie__time">169 min</p>
-                                <p>Adventure | Drama | Fantasy </p>
-                           
-                             </li>
-                             <li class="last-block">
-                                 <a href="http://amovie.designzway.com/movie-page-left.html" class="slide__link">more</a>
-                             </li>
-                         </ul>
-                     </div>
+					 ?>
                  </div>
                 <div class="col-sm-10 col-sm-offset-1 movie-best__check">check all movies available for rent</div>
             </div>

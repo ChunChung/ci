@@ -23,11 +23,8 @@ class Movies extends CI_Controller {
 
 		$this->load->model('Movies_model');
 
-		$data = $this->Movies_model->getMovie($movieID)[0];
-		print_r($data);
+		$data = $this->Movies_model->getMovieDetails($movieID)[0];
+		$data['Actors'] = $this->Movies_model->getMovieActors($data['MovieID']);
 		$this->load->view('moviedetail', $data);
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

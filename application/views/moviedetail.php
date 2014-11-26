@@ -73,8 +73,7 @@
 
                 <!-- Additional header buttons / Auth and direct link to booking-->
                 <div class="control-panel">
-                    <a href="movie-page-left.html#" class="btn btn--sign login-window">Sign in</a>
-                    <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--book login-window">Book Returns</a>
+                    <a href="/ci/index.php/login" class="btn btn--sign login-window">Sign in</a>
                 </div>
 
             </div>
@@ -86,25 +85,33 @@
         <section class="container">
             <div class="col-sm-8 col-md-9">
                 <div class="movie">
-				<h2 class="page-heading"><?php echo $Title;?></h2>
+				<h2 class="page-heading"><?php if(isset($Title)) echo $Title;?></h2>
 
                     <div class="movie__info">
                         <div class="col-sm-6 col-md-4 movie-mobile">
                             <div class="movie__images">
-							<img alt='' src="<?php echo $img_url?>">
+							<img alt='' src="<?php if(isset($img_url)) echo $img_url?>">
                             </div>
 
                         </div>
 
                         <div class="col-sm-6 col-md-8">
-						<p class="movie__time"><?php echo $Duration;?> min</p>
-                            <p class="movie__option"><strong>Year: </strong><a>2012</a>
-                            </p>
+						<p class="movie__time"><?php if(isset($Duration)) echo $Duration;?> min</p>
+                            <!--<p class="movie__option"><strong>Year: </strong><a>2012</a>
+                            </p> -->
 
-							<p class="movie__option"><strong>Release date: </strong><?php echo $ReleaseData;?></p>
-							<p class="movie__option"><strong>Director: </strong><a><?php echo $DirectorName;?></a>
+							<p class="movie__option"><strong>Release date: </strong><?php if(isset($ReleaseData)) echo $ReleaseData;?></p>
+							<p class="movie__option"><strong>Director: </strong><a><?php if(isset($DirectorName)) echo $DirectorName;?></a>
                             </p>
-							<p class="movie__option"><strong>Actors: </strong><a ><?php echo $FName." ".$LName;?></a><a >...</a>
+							<p class="movie__option"><strong>Actors: </strong><a >
+
+							<?php 
+								if (isset($Actors)) {
+									echo implode(", ", $Actors);
+								}
+
+
+							?></a><a >...</a>
                             </p>
 
                         </div>
@@ -118,7 +125,7 @@
 
        </div>
 
-                <h2 class="page-heading">showtime &amp; tickets</h2>
+                <h2 class="page-heading">Available Stores </h2>
                 <div class="choose-container">
 
 
