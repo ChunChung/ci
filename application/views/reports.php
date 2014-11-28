@@ -65,15 +65,8 @@
                     <!-- Link navigation -->
                     
                 </nav>
-                
                 <!-- Additional header buttons / Auth and direct link to booking-->
-                <div class="control-panel">
- <!--                  <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--danger btn--book login-window">Adminstrative Reports</a> -->
-                    <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--book login-window">Book Returns</a>
-                      <a href="/ci/index.php/login" class="btn btn--sign">Sign in</a>
-                    <a href="/ci/index.php/login/logout" class="btn btn--sign ">Log out</a>
-                </div>
-
+				<?php include('salespersonhead.php');?>
             </div>
         </header>
         

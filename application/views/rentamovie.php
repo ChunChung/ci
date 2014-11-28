@@ -22,15 +22,15 @@
     <!-- Stylesheets -->
 
         <!-- Mobile menu -->
-        <link href="/ci/scripts/css/gozha-nav.css" rel="stylesheet" />
+        <link href="css/gozha-nav.css" rel="stylesheet" />
         <!-- Select -->
-        <link href="/ci/scripts/css/external/jquery.selectbox.css" rel="stylesheet" />
+        <link href="css/external/jquery.selectbox.css" rel="stylesheet" />
     
         <!-- Custom -->
-        <link href="/ci/scripts/css/style.css?v=1" rel="stylesheet" />
+        <link href="css/style.css?v=1" rel="stylesheet" />
 
         <!-- Modernizr -->
-        <script src="/ci/scripts/js/external/modernizr.custom.js"></script>
+        <script src="js/external/modernizr.custom.js"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
     <!--[if lt IE 9]> 
@@ -47,8 +47,8 @@
         <header class="header-wrapper">
             <div class="container">
                 <!-- Logo link-->
-                <a href='/ci/index.php' class="logo">
-                    <img alt='logo' src="/ci/scripts/images/logo.png">
+                <a href='http://amovie.designzway.com/index.html' class="logo">
+                    <img alt='logo' src="images/logo.png">
                 </a>
 
                 <!-- Main website navigation-->
@@ -81,26 +81,36 @@
         <div class="contact-form-wrapper">
             <div class="container">
                 <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                    <form id='contact-form' class="form row" method='post' novalidate="" action="/ci/index.php/salesperson/send">
-                        <p class="form__title">Add New Customer</p>
-                        <div class="col-sm-6">
-                            <input type='text' placeholder='First Name' name="user-fname" class="form__mail">
-                        </div>
-						 <div class="col-sm-6">
-                            <input type='text' placeholder='Last Name' name='user-lname' class="form__mail">
-                        </div>
-                        <div class="col-sm-6">
-                            <input type='email' placeholder='email' name='user-email' class="form__mail">
-                        </div>
-						 <div class="col-sm-6">
-                            <input type='date' placeholder='Date of Birth' name='user-dob' class="form__mail">
-                        </div>
+                    <form id='contact-form' class="form row" method='post' novalidate="" action="send.php">
+                        <p class="form__title">Rental Invoice</p>
                         <div class="col-sm-12">
-							<input type='text' placeholder='Address' name='user-address' class="form__mail">
+                   
+						   <select>
+						   <option value="" disabled selected>Select Customer</option>
+						  <option value="volvo">Volvo</option>
+						  <option value="saab">Saab</option>
+						  <option value="mercedes">Mercedes</option>
+						  <option value="audi">Audi</option>
+							</select>
                         </div>
-                        <div class="col-sm-12">
-							<input type='text' placeholder='(*) Phone Number' name='user-number' class="form__mail">
+						
+        <div class="clearfix"></div>
+						 <div class="col-sm-12">
+                           <select name="cars" multiple>
+						   <option value="" disabled selected>Select Movies (Press Ctrl to select multiple movies)</option>
+						  <option value="volvo">Big Hero 6</option>
+						  <option value="saab">Harry Potter</option>
+						  <option value="opel">Interstellar</option>
+						  <option value="audi">Desi Shud Romance</option>
+						</select>
+
                         </div>
+                        
+        <hr>
+						 <div class="col-sm-12">
+                            <input type='date' placeholder='Borrow Date' name='user-dob' class="form__mail">
+                        </div>
+                        
                         <button type="submit" class='btn btn-md btn--danger'>Add Customer</button>
                     </form>
                 </div>
@@ -134,24 +144,24 @@
 	<!-- JavaScript-->
         <!-- jQuery 1.9.1--> 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/ci/scripts/js/external/jquery-1.10.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/external/jquery-1.10.1.min.js"><\/script>')</script>
         <!-- Migrate --> 
-        <script src="/ci/scripts/js/external/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/external/jquery-migrate-1.2.1.min.js"></script>
         <!-- Bootstrap 3--> 
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 
         <!-- Mobile menu -->
-        <script src="/ci/scripts/js/jquery.mobile.menu.js"></script>
+        <script src="js/jquery.mobile.menu.js"></script>
          <!-- Select -->
-        <script src="/ci/scripts/js/external/jquery.selectbox-0.2.min.js"></script>
+        <script src="js/external/jquery.selectbox-0.2.min.js"></script>
 
         <!--*** Google map  ***-->
         <script src="https://maps.google.com/maps/api/js?sensor=true"></script> 
         <!--*** Google map infobox  ***-->
-        <script src="/ci/scripts/js/external/infobox.js"></script>
+        <script src="js/external/infobox.js"></script>
 
         <!-- Form element -->
-        <script src="/ci/scripts/js/external/form-element.js"></script>
+        <script src="js/external/form-element.js"></script>
         <!-- Form validation -->
 
 		<script type="text/javascript">
