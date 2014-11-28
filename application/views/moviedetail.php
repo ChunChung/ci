@@ -90,7 +90,7 @@
                     <div class="movie__info">
                         <div class="col-sm-6 col-md-4 movie-mobile">
                             <div class="movie__images">
-							<img alt='' src="<?php if(isset($PictureURL)) echo $PictureURL?>">
+							<img alt='' src="<?php if(isset($PictureURL)) echo $PictureURL?> " width="262" height="343">
                             </div>
 
                         </div>

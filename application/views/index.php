@@ -92,7 +92,7 @@
         <section class="container">
             <div class="movie-best">
                 <div class="col-sm-10 col-sm-offset-1 movie-best__rating">
-                    Our Rental Hits
+                    Our Latest Release
                 </div>
                  <div class="col-sm-12 change--col">
 					 <?php 
@@ -134,15 +134,13 @@
                             
                           </ul>
 
-                          <input name="search-input" type='text' class="select__field">
+						  <form method="post" action="/ci/index.php/welcome/findmovie" >
+                          <input name="inputMovie" type='text' class="select__field">
                           
                           <div class="select__btn">
-                            <a href="reports.html" class="btn btn-md btn--danger location">find <span class="hidden-exrtasm">your Movie</span></a>
-                            
+                            <button class="btn btn-md btn--danger location">find your Movie</button>
                           </div>
-
-                         
-
+						  </form>
                       </div>
                   </div>
             </div>
@@ -169,7 +167,7 @@
 									echo "</div>";
 									echo "<div class=\"movie__info\">";
 										echo "<a href=\"/ci/index.php/movies/index/" .$row['MovieID']. "\" class=\"movie__title\">" . $row['Title'] . "</a>";
-										echo "<p class=\"movie__time\">" . $row['Duration'] . "min</p>";
+										echo "<p class=\"movie__time\">" . $row['Duration'] . "</p>";
 										echo "<p class=\"movie__option\">" . $row['Genre'] . "</p>";
 									echo "</div>";
 								echo "</div>";

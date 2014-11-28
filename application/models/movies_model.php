@@ -67,7 +67,6 @@ class Movies_model extends CI_Model {
 			$movie['Genre'] = implode('|' , $this->getGenre($row->MovieID));
 			array_push($result, $movie);
 		}
-
 		return $result;
 	}
 
@@ -85,18 +84,27 @@ class Movies_model extends CI_Model {
 			$movie['Genre'] = implode('|' , $this->getGenre($row->MovieID));
 			array_push($result, $movie);
 		}
-
 		return $result;
 	
 	}
 
-	function getGenre($MovieID) {
+	function findMovie($Movie) {
 		$result = Array();
 
+		$query = $this->db->query("
+			SELECT MovieID FROM Movie WHERE Title like '%" . $Movie . "%'");
+
+		foreach ($query->result() as $row) {
+			array_push($result, $row->MovieID);
+		}
+		return $result;
+	}
+
+	function getGenre($MovieID) {
+		$result = Array();
 		$query = $this->db->query('
 			SELECT Movie_has_Genre.Genre_GenreName FROM Movie_has_Genre WHERE Movie_MovieID = 
 			'.$MovieID);
-
 		foreach ($query->result() as $row) {
 			array_push($result, $row->Genre_GenreName);
 		}

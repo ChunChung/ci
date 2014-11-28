@@ -29,5 +29,10 @@ class Login_model extends CI_Model {
     	return $query->result_array();
 	}
 
+	function addCustomer($infos) {
+    	$table = 'Customer';
+		return $this->db->insert($table, $infos); 
+	}
+
 }
 ?>

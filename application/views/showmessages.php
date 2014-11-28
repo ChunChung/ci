@@ -11,6 +11,8 @@
     <!-- Mobile Specific Metas-->
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="telephone=no" name="format-detection">
+		<meta http-equiv="refresh" content="5;url=http://localhost:8888/ci/index.php/" />
+
     
     <!-- Fonts -->
         <!-- Font awesome - icon font -->
@@ -79,19 +81,9 @@
         
  <hr><hr><hr>
         <!-- Main content -->
-                <form id="login-form" class="login" method='post' novalidate='' action='login/submit'>
-                    <p class="login__title">sign in <br><span class="login-edition">welcome to Quichunom DVD Rentals</span></p>
-               
-                    <div class="field-wrap">
-                    <input type='number' placeholder='Salesperson ID' name='inputID' class="login__input">
-                    <input type='password' placeholder='Password' name='inputPasswd' class="login__input">
-
-                     </div>
-                    
-                    <div class="login__control">
-                        <button class="btn btn-md btn--warning btn--wider">sign in</button>
-                </form>
-        
+		<div class='login'>
+		<p class="login__title"><?php echo $type;?> <br><span class="login-edition"><?php echo $message;?></span></p>
+		</div>
         <div class="clearfix"></div>
     </div>
 
