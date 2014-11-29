@@ -79,7 +79,7 @@
         
  <hr><hr><hr>
         <!-- Main content -->
-                <form id="login-form" class="login" method='post' novalidate='' action='login/submit'>
+                <form id="login-form" class="login" method='post' novalidate='' action='/ci/index.php/login/submit'>
                     <p class="login__title">sign in <br><span class="login-edition">welcome to Quichunom DVD Rentals</span></p>
                
                     <div class="field-wrap">
