@@ -85,7 +85,7 @@
                         <p class="form__title">Rental Invoice</p>
                         <div class="col-sm-12">
                    
-						   <select name="MobileNumber">
+						   <select class="col-sm-12" name="MobileNumber">
 						   <option value="" disabled selected>Select Customer</option>
 							<?php
 								foreach($Customers as $User) {
@@ -97,9 +97,9 @@
 							</select>
                         </div>
 						
-        <div class="clearfix"></div>
+        				<div class="clearfix"></div>
 						 <div class="col-sm-12">
-                           <select name="MovieID[]" multiple>
+                           <select class="col-sm-12" name="MovieID[]" multiple>
 						   <option value="" disabled selected>Select Movies (Press Ctrl to select multiple movies)</option>
 							<?php
 								foreach($Movies as $Movie) {
