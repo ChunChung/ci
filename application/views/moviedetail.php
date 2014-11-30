@@ -49,7 +49,7 @@
     <div class="wrapper">
 
         <!-- Header section -->
-        <header class="header-wrapper">
+        <header class="header-wrapper header-wrapper--home">
             <div class="container">
                 <!-- Logo link-->
                 <a href='/ci/index.php/' class="logo">
@@ -100,7 +100,7 @@
                             <!--<p class="movie__option"><strong>Year: </strong><a>2012</a>
                             </p> -->
 
-							<p class="movie__option"><strong>Release date: </strong><?php if(isset($ReleaseData)) echo $ReleaseData;?></p>
+							<p class="movie__option"><strong>Release date: </strong><?php if(isset($ReleaseDate)) echo $ReleaseDate;?></p>
 							<p class="movie__option"><strong>Director: </strong><a><?php if(isset($DirectorName)) echo $DirectorName;?></a>
                             </p>
 							<p class="movie__option"><strong>Actors: </strong><a >

@@ -73,8 +73,6 @@
                 
                 <!-- Additional header buttons / Auth and direct link to booking-->
                 <div class="control-panel">
-                   <a href="/ci/index.php/salesperson/reports" class="btn btn-md btn--warning btn--danger btn--book ">Adminstrative Reports</a>
-                    <a href="http://www.google.com" class="btn btn-md btn--warning btn--book ">Book Returns</a>
                       <a href="/ci/index.php/login" class="btn btn--sign ">Sign in</a>
                     <a href="/ci/index.php/login/logout" class="btn btn--sign ">Log out</a>
                 </div>
@@ -102,7 +100,7 @@
 								echo "<img alt='' src=\"". $row['PictureURL']. "\" height=\"300\" width=\"190\">";
 								echo "<ul class=\"movie-beta__info\">";
 								echo "<li>";
-								echo "<p class=\"movie__time\">" . $row['Duration'] ."min</p>";
+								echo "<p class=\"movie__time\">" . $row['Duration'] ."</p>";
 								echo "<p>" . $row['Genre'] . "</p>";
 								echo "</li>";
 								echo "<li class=\"last-block\">";
@@ -130,7 +128,7 @@
                       <div class="mega-select pull-right">
                           <span class="mega-select__point">Search by</span>
                           <ul class="mega-select__sort">
-                              <li class="filter-wrap"><a href="index.html#" class="mega-select__filter filter--active" data-filter='location'>Movie Name</a></li>
+                              <li class="filter-wrap mega-select__filter filter--active" data-filter='location'>Movie Name</li>
                             
                           </ul>
 

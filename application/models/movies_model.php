@@ -73,7 +73,8 @@ class Movies_model extends CI_Model {
 	function getMoviesByRating() {
 		$result = Array();
 		$query = $this->db->query('
-			SELECT Movie.MovieID, Movie.Duration, Movie.Title, Movie.PictureURL FROM Movie Order by Movie.IMDBRating limit 6 '
+			SELECT Movie_has_Store_has_Transaction.Movie_has_Store_Movie_MovieID as MovieID, Movie.Duration, Movie.Title, Movie.PictureURL FROM Movie, Movie_has_Store_has_Transaction WHERE Movie.MovieID = Movie_has_Store_has_Transaction.Movie_has_Store_Movie_MovieID group by Movie_has_Store_has_Transaction.Movie_has_Store_Movie_MovieID order by count(*) desc
+			'
 			);
 		foreach ($query->result() as $row) {
 			$movie =  Array();

@@ -129,4 +129,19 @@ class Salesperson extends CI_Controller {
 			$this->load->view('login');
 		}
 	}
+
+	public function returnmovie() 
+	{
+		session_start();
+		$this->load->model('Salesperson_model');
+
+		if($this->session->userdata('login_id')) {
+			$this->load->view('returnmovie', $data);
+		}
+		else {
+			$data['type'] = "Error";
+			$data['message'] = "Sorry, you don't have right to return a movie";
+			$this->load->view('showmessages', $data); 
+		}
+	}
 }

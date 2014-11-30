@@ -44,7 +44,7 @@
         <!-- Banner -->
      
         <!-- Header section -->
-        <header class="header-wrapper">
+        <header class="header-wrapper header-wrapper--home">
             <div class="container">
                 <!-- Logo link-->
                 <a href='/ci/index.php' class="logo">

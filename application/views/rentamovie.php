@@ -44,10 +44,10 @@
         <!-- Banner -->
      
         <!-- Header section -->
-        <header class="header-wrapper">
+        <header class="header-wrapper header-wrapper--home">
             <div class="container">
                 <!-- Logo link-->
-                <a href='http://amovie.designzway.com/index.html' class="logo">
+                <a href='/ci/index.php/' class="logo">
                     <img alt='logo' src="/ci/scripts/images/logo.png">
                 </a>
 
