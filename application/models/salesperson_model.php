@@ -176,6 +176,7 @@ class Salesperson_model extends CI_Model {
 
 		foreach ($query->result() as $row) {              
 			$customer = Array();
+			$customer['type'] = 1;
 			$customer['1'] = $row->MobileNumber;
 			$customer['2'] = $row->FName." ".$row->LName;
 			$customer['3'] = "$ ".$row->TAmount . " USD";
@@ -193,9 +194,10 @@ class Salesperson_model extends CI_Model {
 
 		foreach ($query->result() as $row) {              
 			$customer = Array();
+			$customer['type'] = 2;
 			$customer['1'] = $this->getStoreID($row->Salesperson_SalespersonID)[0];
 			$customer['2'] = $row->Salesperson_SalespersonID ;
-			$customer['3'] = "$ ".$row->Amount . " USD";
+			$customer['3'] = "$ ".$row->TAmount . " USD";
 			array_push($result, $customer);   
 		}                                                 
 		return $result; 
@@ -207,6 +209,7 @@ class Salesperson_model extends CI_Model {
 		$query = $this->db->query('Select *, count(Payment.`Transaction_TransactionID`) as active from Payment, Salesperson where Payment.Salesperson_SalespersonID = Salesperson.SalespersonID group by Payment.`Salesperson_SalespersonID` order by active desc');
 		foreach ($query->result() as $row) {              
 			$customer = Array();
+			$customer['type'] = 4;
 			$customer['1'] = $row->Salesperson_SalespersonID;
 			$customer['2'] = $row->FName." ".$row->LName;
 			$customer['3'] = $row->active . " times";
@@ -223,6 +226,7 @@ class Salesperson_model extends CI_Model {
 		);                                                                                                               
 		foreach ($query->result() as $row) {                                                                                 
 			$movie =  Array();                                                                                               
+			$movie['type'] = 3;
 			$movie['3'] = $row->Duration;                                                                             
 			$movie['1'] = $row->Title;                                                                                   
 			$movie['2'] = implode('|' , $this->getGenre($row->MovieID));                                                 
@@ -250,6 +254,7 @@ class Salesperson_model extends CI_Model {
 		);                                                                                                               
 		foreach ($query->result() as $row) {                                                                                 
 			$movie =  Array();                                                                                               
+			$movie['type'] = 5;
 			$movie['1'] = $row->MobileNumber;
 			$movie['2'] = $row->FName." ".$row->LName;
 			$movie['3'] = "Last ". abs($row->timediff) . " days";

@@ -95,6 +95,41 @@
 								<?php
 								if(isset($result)) {
 									$count = 1;
+									if($result[0]['type'] == 1) {
+										echo "<tr class=\"rates rates--top\">";
+										echo "<td class=\"rates__head\">MobileNumber</td>";
+										echo "<td class=\"rates__head\">Name</td>";
+										echo "<td class=\"rates__result\">Amount</td>";
+										echo "</tr>";
+									}
+									else if($result[0]['type'] == 2) {
+										echo "<tr class=\"rates rates--top\">";
+										echo "<td class=\"rates__head\">StoreID</td>";
+										echo "<td class=\"rates__head\">SalespersonID</td>";
+										echo "<td class=\"rates__result\">Amount</td>";
+										echo "</tr>";
+									}
+									else if($result[0]['type'] == 3) {
+										echo "<tr class=\"rates rates--top\">";
+										echo "<td class=\"rates__head\">Movie Name</td>";
+										echo "<td class=\"rates__head\">Genre</td>";
+										echo "<td class=\"rates__result\">Duration</td>";
+										echo "</tr>";
+									}
+									else if($result[0]['type'] == 4) {
+										echo "<tr class=\"rates rates--top\">";
+										echo "<td class=\"rates__head\">SalespersonID</td>";
+										echo "<td class=\"rates__head\">Name</td>";
+										echo "<td class=\"rates__result\">Total Service</td>";
+										echo "</tr>";
+									}
+									else if($result[0]['type'] == 5) {
+										echo "<tr class=\"rates rates--top\">";
+										echo "<td class=\"rates__head\">MobileNumber</td>";
+										echo "<td class=\"rates__head\">Name</td>";
+										echo "<td class=\"rates__result\">Unreturned Days</td>";
+										echo "</tr>";
+									}
 									foreach($result as $row) {
 										if ($count <=3)
 										echo "<tr class=\"rates rates--top\">";
