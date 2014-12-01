@@ -94,6 +94,8 @@
 			}
 		?>
 
+		<hr>
+
         <div class="search-wrapper">
             <div class="container container--add">
                 <form id="search-form" method="post" class="search" action ="moviebycustomer">

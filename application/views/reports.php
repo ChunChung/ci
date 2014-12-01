@@ -77,7 +77,13 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-heading">Rates</h2>
+						<hr>
+                        <a href="/ci/index.php/salesperson/reports/topcustomer" class="page-heading">Top Customer</a>
+                        <a href="/ci/index.php/salesperson/reports/storerevenue" class="page-heading">Store Revenue</a>
+                        <a href="/ci/index.php/salesperson/reports/mostrented" class="page-heading">Most Rented Movie</a>
+                        <a href="/ci/index.php/salesperson/reports/activesalesperson" class="page-heading">Active Salesperson</a>
+                        <a href="/ci/index.php/salesperson/reports/agingcustomer" class="page-heading">Aging Customer</a>
+						<hr>
 
                         <div class="rates-wrapper rates--full">
                             
@@ -85,147 +91,24 @@
                                 <colgroup class="col-width-lg">
                                 <colgroup class="col-width">
                                 <colgroup class="col-width-sm">
-                                <colgroup class="col-width">
 
-                                <tr class="rates rates--top">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">1. Thor: The Dark World</a></td>
-                                    <td class="rates__vote">233 546 votes</td>
-                                    <td class="rates__result">5.0</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
+								<?php
+								if(isset($result)) {
+									$count = 1;
+									foreach($result as $row) {
+										if ($count <=3)
+										echo "<tr class=\"rates rates--top\">";
+										else 
+										echo "<tr class=\"rates\">";
 
-                                <tr class="rates rates--top">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">2. The Book Thief</a></td>
-                                    <td class="rates__vote">163 546 votes</td>
-                                    <td class="rates__result">5.0</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                <tr class="rates rates--top">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">3. How I Live Now</a></td>
-                                    <td class="rates__vote">843 546 votes</td>
-                                    <td class="rates__result">4.9</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">4. The Armstrong Lie</a></td>
-                                    <td class="rates__vote">3 598 votes</td>
-                                    <td class="rates__result">4.9</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">5. Ender's Game</a></td>
-                                    <td class="rates__vote">14 641 votes</td>
-                                    <td class="rates__result">4.8</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">6. Jackass Presents: Bad Grandpa</a></td>
-                                    <td class="rates__vote">32 487 votes</td>
-                                    <td class="rates__result">4.7</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">7. Last Vegas</a></td>
-                                    <td class="rates__vote">2 514 votes</td>
-                                    <td class="rates__result">4.7</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">8. Free Birds</a></td>
-                                    <td class="rates__vote">62 841 votes</td>
-                                    <td class="rates__result">4.6</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">9. Gravity</a></td>
-                                    <td class="rates__vote">6 885 votes</td>
-                                    <td class="rates__result">4.6</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">10. Jackass Presents: Bad Grandpa</a></td>
-                                    <td class="rates__vote">7 122 votes</td>
-                                    <td class="rates__result">4.6</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">11. Captain Phillips</a></td>
-                                    <td class="rates__vote">10 021 votes</td>
-                                    <td class="rates__result">4.4</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">12. 12 Years a Slave</a></td>
-                                    <td class="rates__vote">541 votes</td>
-                                    <td class="rates__result">4.4</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">13. Cloudy with a Chance of Meatballs 2</a></td>
-                                    <td class="rates__vote">1 020 votes</td>
-                                    <td class="rates__result">4.4</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">14. Carrie</a></td>
-                                    <td class="rates__vote">840 votes</td>
-                                    <td class="rates__result">4.4</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">15. The Counselor</a></td>
-                                    <td class="rates__vote">14 023 votes</td>
-                                    <td class="rates__result">4.3</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">16. The Best Man Holiday</a></td>
-                                    <td class="rates__vote">4 250 votes</td>
-                                    <td class="rates__result">4.3</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">17. The Hunger Games: Catching Fire</a></td>
-                                    <td class="rates__vote">100 251 votes</td>
-                                    <td class="rates__result">4.3</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">18. Delivery Man</a></td>
-                                    <td class="rates__vote">84 241 votes</td>
-                                    <td class="rates__result">4.1</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">19. Frozen</a></td>
-                                    <td class="rates__vote">7 215 votes</td>
-                                    <td class="rates__result">4.0</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
-
-                                 <tr class="rates">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">20. Oldboy</a></td>
-                                    <td class="rates__vote">400 votes</td>
-                                    <td class="rates__result">3.9</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
+										echo "<td class=\"rates__obj\">".$row['1']. "</td>";
+										echo "<td class=\"rates__vote\">".$row['2']. "</td>";
+										echo "<td class=\"rates__result\">".$row['3']. "</td>";
+										echo "</tr>";
+									
+									}
+								}
+								?>
 
                             </table>
                         </div>

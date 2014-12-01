@@ -123,7 +123,27 @@ class Salesperson extends CI_Controller {
 	{
 		session_start();
 		if($this->session->userdata('login_id')) {
-			$this->load->view('reports');
+			$this->load->model('Salesperson_model');
+
+			if($this->uri->segment(3) == "topcustomer") {
+				$data['result'] = $this->Salesperson_model->gettopcustomer();
+			}
+			else if($this->uri->segment(3) == "storerevenue") {
+				$data['result'] = $this->Salesperson_model->getstorerevenue();
+			}
+			else if($this->uri->segment(3) == "mostrented") {
+				$data['result'] = $this->Salesperson_model->getmostrented();
+			}
+			else if($this->uri->segment(3) == "activesalesperson") {
+				$data['result'] = $this->Salesperson_model->getactivesalesperson();
+			}
+			else if($this->uri->segment(3) == "agingcustomer") {
+				$data['result'] = $this->Salesperson_model->getagingcustomer();
+			}
+			else {
+				$data['result'] = $this->Salesperson_model->gettopcustomer();
+			}
+			$this->load->view('reports', $data);
 		}
 		else {
 			$this->load->view('login');

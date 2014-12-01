@@ -168,5 +168,97 @@ class Salesperson_model extends CI_Model {
 		}                                                 
 		return $result; 
 	}
+
+	function gettopcustomer() {
+		$result = Array();
+		$query = $this->db->query(
+			'select *, sum(payment.Amount) as TAmount from customer, payment where payment.`Customer_MobileNumber`=customer.MobileNumber group by payment.`Customer_MobileNumber`  order by TAmount desc');
+
+		foreach ($query->result() as $row) {              
+			$customer = Array();
+			$customer['1'] = $row->MobileNumber;
+			$customer['2'] = $row->FName." ".$row->LName;
+			$customer['3'] = "$ ".$row->TAmount . " USD";
+			array_push($result, $customer);   
+		}                                                 
+		return $result; 
+		
+	}
+
+	function getstorerevenue() {
+		$result = Array();
+		$query = $this->db->query(
+			'select *, sum(payment.Amount) as TAmount from payment group by `Salesperson_SalespersonID` order by TAmount desc
+			');
+
+		foreach ($query->result() as $row) {              
+			$customer = Array();
+			$customer['1'] = $this->getStoreID($row->Salesperson_SalespersonID)[0];
+			$customer['2'] = $row->Salesperson_SalespersonID ;
+			$customer['3'] = "$ ".$row->Amount . " USD";
+			array_push($result, $customer);   
+		}                                                 
+		return $result; 
+		
+	}
+
+	function getactivesalesperson() {
+		$result = Array();
+		$query = $this->db->query('Select *, count(Payment.`Transaction_TransactionID`) as active from Payment, Salesperson where Payment.Salesperson_SalespersonID = Salesperson.SalespersonID group by Payment.`Salesperson_SalespersonID` order by active desc');
+		foreach ($query->result() as $row) {              
+			$customer = Array();
+			$customer['1'] = $row->Salesperson_SalespersonID;
+			$customer['2'] = $row->FName." ".$row->LName;
+			$customer['3'] = $row->active . " times";
+			array_push($result, $customer);   
+		}                                                 
+		return $result; 
+		
+	}
+
+	function getmostrented() {                                                                                           
+		$result = Array();                                                                                                   
+		$query = $this->db->query('                                                                                          
+			SELECT Movie_has_Store_has_Transaction.Movie_has_Store_Movie_MovieID as MovieID, Movie.Duration, Movie.Title, Movie.PictureURL FROM Movie, Movie_has_Store_has_Transaction WHERE Movie.MovieID = Movie_has_Store_has_Transaction.Movie_has_Store_Movie_MovieID group by Movie_has_Store_has_Transaction.Movie_has_Store_Movie_MovieID order by count(*) desc               '                                                                                                                
+		);                                                                                                               
+		foreach ($query->result() as $row) {                                                                                 
+			$movie =  Array();                                                                                               
+			$movie['3'] = $row->Duration;                                                                             
+			$movie['1'] = $row->Title;                                                                                   
+			$movie['2'] = implode('|' , $this->getGenre($row->MovieID));                                                 
+			array_push($result, $movie);                                                                                     
+		}                                                                                                                    
+		return $result;                                                                                                      
+
+	}                                                                                                                        
+
+	function getGenre($MovieID) {
+		$result = Array();
+		$query = $this->db->query('
+			SELECT Movie_has_Genre.Genre_GenreName FROM Movie_has_Genre WHERE Movie_MovieID = 
+			'.$MovieID);
+		foreach ($query->result() as $row) {
+			array_push($result, $row->Genre_GenreName);
+		}
+		return $result;
+	}
+
+	function getagingcustomer() {                                                                                           
+		$result = Array();                                                                                                   
+		$query = $this->db->query('                                                                                          
+            select *, datediff(Transaction.Borrow_Date, now()) as timediff from Transaction, Customer where Transaction.`Customer_MobileNumber` = Customer.`MobileNumber` and Transaction.TransactionID NOT IN (select Transaction_TransactionID as TransactionID from Payment) order by timediff'
+		);                                                                                                               
+		foreach ($query->result() as $row) {                                                                                 
+			$movie =  Array();                                                                                               
+			$movie['1'] = $row->MobileNumber;
+			$movie['2'] = $row->FName." ".$row->LName;
+			$movie['3'] = "Last ". abs($row->timediff) . " days";
+			array_push($result, $movie);                                                                                     
+		}                                                                                                                    
+		return $result;                                                                                                      
+
+	}                                                                                                                        
+
+
 }
 ?>
