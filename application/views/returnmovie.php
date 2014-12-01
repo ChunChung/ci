@@ -74,6 +74,26 @@
 <hr>
         <hr>
 
+
+		<?php 
+			if(isset($ReturnInfos)) {
+				echo "<div class='login'>";
+				echo "<p class=\"login__title\">";
+				echo "Return sucessful!!<br>";
+
+				echo "<span class=\"login-edition\">";
+
+				echo "You return ".$ReturnInfos['Count']." movies and pay ".$ReturnInfos['Amount']. " dollors for " . $ReturnInfos['Day'] . " days";
+
+				echo "</span>";
+				echo "</p>";
+
+				echo "</div>";
+
+
+			}
+		?>
+
         <div class="search-wrapper">
             <div class="container container--add">
                 <form id="search-form" method="post" class="search" action ="moviebycustomer">
@@ -83,7 +103,7 @@
             </div>
         </div>
         <!-- Search bar -->
-        <hr><hr>
+        <hr>
         <!-- Main content -->
         <section class="container">
             <div class="col-sm-12">

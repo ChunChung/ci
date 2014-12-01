@@ -123,7 +123,6 @@ class Salesperson_model extends CI_Model {
 		'select *, datediff(Transaction.Borrow_Date, now()) as Days from Transaction where TransactionID = '.$TID);
 
 		$query_result = $query->result()[0];
-		print_r($query_result);
 
 		$payment['Customer_MobileNumber'] = $query_result->Customer_MobileNumber;
 		$payment['Transaction_TransactionID'] = $TID;
@@ -131,9 +130,11 @@ class Salesperson_model extends CI_Model {
 		$payment['Return_Date'] = date("Y-m-d");
 		$payment['Amount'] = (abs($query_result->Days)==0?1:abs($query_result->Days)) * $movie_count + floor(abs($query_result->Days)/7) * 5;
 
-		print_r($payment);
 
 		$this->db->insert('Payment', $payment); 
+
+		$payment['Count'] = $movie_count;
+		$payment['Day'] = abs($query_result->Days);
 
 
 		return $payment; 

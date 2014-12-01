@@ -168,7 +168,6 @@ class Salesperson extends CI_Controller {
 		$this->load->model('Salesperson_model');
 
 		if($this->session->userdata('login_id')) {
-				print_r($this->input->post('TID'));
 			$data['ReturnInfos'] = $this->Salesperson_model->returnTransaction($this->input->post('TID'));
 			$data['Transactions'] = $this->Salesperson_model->getTransaction($this->session->userdata('login_id'));
 			$this->load->view('returnmovie', $data);
