@@ -85,7 +85,7 @@ class Salesperson_model extends CI_Model {
 	function getTransaction() {
 		$result = Array();
 		$query = $this->db->query(
-		'select * from Transaction, Customer where Transaction.`Customer_MobileNumber` = Customer.`MobileNumber`');
+			'select * from Transaction, Customer where Transaction.`Customer_MobileNumber` = Customer.`MobileNumber` and Transaction.TransactionID NOT IN (select Transaction_TransactionID as TransactionID from Payment)');
 
 		foreach ($query->result() as $row) {              
 			$customer = Array();
@@ -93,10 +93,50 @@ class Salesperson_model extends CI_Model {
 			$customer['MobileNumber'] = $row->MobileNumber;
 			$customer['BorrowDate'] = $row->Borrow_Date;
 			$customer['Movies'] = $this->getBorrowMovies($row->TransactionID);
+			$customer['Address'] = $row->Address;
 			$customer['TID'] = $row->TransactionID;
 			array_push($result, $customer);   
 		}                                                 
 		return $result; 
+	}
+
+	function returnTransaction($TID) {
+		$payment = Array();
+
+		$query = $this->db->query(
+		'select * from Movie_has_Store_has_Transaction where Transaction_TransactionID = '.$TID);
+
+		$movie_count = 0;
+		foreach ($query->result() as $row) {              
+			$movie_count = $movie_count + 1;
+			$data = array(
+				'Movie_MovieID' => $row->Movie_has_Store_Movie_MovieID,
+				'Store_StoreID' => $row->Movie_has_Store_Store_StoreID,
+			);
+
+			$this->db->set('Quantity', 'Quantity+1', FALSE);
+			$this->db->where($data);
+			$this->db->update('Movie_has_Store'); 
+		}                                                 
+
+		$query = $this->db->query(
+		'select *, datediff(Transaction.Borrow_Date, now()) as Days from Transaction where TransactionID = '.$TID);
+
+		$query_result = $query->result()[0];
+		print_r($query_result);
+
+		$payment['Customer_MobileNumber'] = $query_result->Customer_MobileNumber;
+		$payment['Transaction_TransactionID'] = $TID;
+		$payment['Salesperson_SalespersonID'] = $query_result->Salesperson_SalespersonID;
+		$payment['Return_Date'] = date("Y-m-d");
+		$payment['Amount'] = (abs($query_result->Days)==0?1:abs($query_result->Days)) * $movie_count + floor(abs($query_result->Days)/7) * 5;
+
+		print_r($payment);
+
+		$this->db->insert('Payment', $payment); 
+
+
+		return $payment; 
 	}
 
 	function getBorrowMovies($TID) {
@@ -110,6 +150,7 @@ class Salesperson_model extends CI_Model {
 		return $movies; 
 	
 	}
+
 	function getCustomerTransaction($MobileNumber, $SalespersonID) {
 		$result = Array();
 		$query = $this->db->query(

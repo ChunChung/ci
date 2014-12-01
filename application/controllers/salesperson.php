@@ -169,6 +169,8 @@ class Salesperson extends CI_Controller {
 
 		if($this->session->userdata('login_id')) {
 				print_r($this->input->post('TID'));
+			$data['ReturnInfos'] = $this->Salesperson_model->returnTransaction($this->input->post('TID'));
+			$data['Transactions'] = $this->Salesperson_model->getTransaction($this->session->userdata('login_id'));
 			$this->load->view('returnmovie', $data);
 		}
 		else {
@@ -176,6 +178,5 @@ class Salesperson extends CI_Controller {
 			$data['message'] = "Sorry, you don't have right to return a movie";
 			$this->load->view('showmessages', $data); 
 		}
-	
 	}
 }

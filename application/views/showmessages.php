@@ -70,10 +70,7 @@
                 <!-- Additional header buttons / Auth and direct link to booking-->
                 <div class="control-panel">
                   
-                   <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--danger btn--book login-window">Adminstrative Reports</a>
-                    <a href="movie-page-left.html#" class="btn btn-md btn--warning btn--book login-window">Book Returns</a>
                       <a href="/ci/index.php/login" class="btn btn--sign login-window">Sign in</a>
-                    <a href="movie-page-left.html#" class="btn btn--sign login-window">Log out</a>
                 </div>
 
             </div>

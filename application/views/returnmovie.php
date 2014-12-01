@@ -96,6 +96,7 @@
                             <table>
                                 <colgroup class="col-width">
                                 <colgroup class="col-width">
+                                <colgroup class="col-width">
                                 <colgroup class="col-width-lg">
                                 <colgroup class="col-width">
 
@@ -105,8 +106,9 @@
 	<td class="rates__head"> Customer Name</td>
 	<td class="rates__head">Borrow Date</td>
 	<td class="rates__head">Movies</td>
+	<td class="rates__head">Address</td>
 	<td class="rates__result">Confirm</td>
-								</tr>
+</tr>
 
 
 
@@ -122,6 +124,7 @@
 											echo "<p>".$Movie."</p>";
 										}
 									echo "</td>";
+									echo "<td class=\"rates__vote\">" .	$row['Address']."</td>";
 									echo "<td class=\"rates__result\">
 										<input type=\"hidden\" name=\"TID\"value=\"".$row['TID']."\">
 										<button class=\"btn\">Return</button></td>";
