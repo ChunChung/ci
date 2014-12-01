@@ -136,6 +136,7 @@ class Salesperson extends CI_Controller {
 		$this->load->model('Salesperson_model');
 
 		if($this->session->userdata('login_id')) {
+			$data['Transactions'] = $this->Salesperson_model->getTransaction($this->session->userdata('login_id'));
 			$this->load->view('returnmovie', $data);
 		}
 		else {
@@ -143,5 +144,38 @@ class Salesperson extends CI_Controller {
 			$data['message'] = "Sorry, you don't have right to return a movie";
 			$this->load->view('showmessages', $data); 
 		}
+	}
+
+	public function moviebycustomer() 
+	{
+		session_start();
+		$this->load->model('Salesperson_model');
+
+		if($this->session->userdata('login_id')) {
+			$data['Transactions'] = $this->Salesperson_model->getCustomerTransaction($this->input->post('mobileNumber'), $this->session->userdata('login_id'));
+			$this->load->view('returnmovie', $data);
+		}
+		else {
+			$data['type'] = "Error";
+			$data['message'] = "Sorry, you don't have right to return a movie";
+			$this->load->view('showmessages', $data); 
+		}
+	}
+
+	public function returnm() 
+	{
+		session_start();
+		$this->load->model('Salesperson_model');
+
+		if($this->session->userdata('login_id')) {
+				print_r($this->input->post('TID'));
+			$this->load->view('returnmovie', $data);
+		}
+		else {
+			$data['type'] = "Error";
+			$data['message'] = "Sorry, you don't have right to return a movie";
+			$this->load->view('showmessages', $data); 
+		}
+	
 	}
 }

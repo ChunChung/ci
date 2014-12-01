@@ -67,6 +67,7 @@ class Salesperson_model extends CI_Model {
 		}                                                 
 		return $result; 
 	}
+
 	function getCustomers() {
 		$result = Array();
 		$query = $this->db->query(
@@ -81,5 +82,49 @@ class Salesperson_model extends CI_Model {
 		return $result; 
 	}
 
+	function getTransaction() {
+		$result = Array();
+		$query = $this->db->query(
+		'select * from Transaction, Customer where Transaction.`Customer_MobileNumber` = Customer.`MobileNumber`');
+
+		foreach ($query->result() as $row) {              
+			$customer = Array();
+			$customer['Name'] = $row->FName. ", ".$row->LName;
+			$customer['MobileNumber'] = $row->MobileNumber;
+			$customer['BorrowDate'] = $row->Borrow_Date;
+			$customer['Movies'] = $this->getBorrowMovies($row->TransactionID);
+			$customer['TID'] = $row->TransactionID;
+			array_push($result, $customer);   
+		}                                                 
+		return $result; 
+	}
+
+	function getBorrowMovies($TID) {
+		$movies = Array();
+		$query = $this->db->query(
+		'SELECT * FROM 	`Movie_has_Store_has_transaction`, Movie WHERE Movie.MovieID = Movie_has_Store_has_transaction.`Movie_has_Store_Movie_MovieID` and  `Transaction_TransactionID` ='.$TID);
+
+		foreach ($query->result() as $row) {              
+			array_push($movies, $row->Title);   
+		}                                                 
+		return $movies; 
+	
+	}
+	function getCustomerTransaction($MobileNumber, $SalespersonID) {
+		$result = Array();
+		$query = $this->db->query(
+		'select * from Transaction, Customer where Transaction.`Customer_MobileNumber` = Customer.`MobileNumber` and Transaction.`Customer_MobileNumber` = ' . $MobileNumber . ' and Transaction.Salesperson_SalespersonID = ' .$SalespersonID);
+
+		foreach ($query->result() as $row) {              
+			$customer = Array();
+			$customer['Name'] = $row->FName. ", ".$row->LName;
+			$customer['MobileNumber'] = $row->MobileNumber;
+			$customer['BorrowDate'] = $row->Borrow_Date;
+			$customer['Movies'] = $this->getBorrowMovies($row->TransactionID);
+			$customer['TID'] = $row->TransactionID;
+			array_push($result, $customer);   
+		}                                                 
+		return $result; 
+	}
 }
 ?>

@@ -76,8 +76,8 @@
 
         <div class="search-wrapper">
             <div class="container container--add">
-                <form id="search-form" method="get" class="search">
-                    <input type="text" class="search__field" placeholder="Enter customer phone number">
+                <form id="search-form" method="post" class="search" action ="moviebycustomer">
+                    <input type="text" name="mobileNumber" class="search__field" placeholder="Enter customer phone number">
                     <button type="submit" class="btn btn-md btn--danger search__button">search customer</button>
                 </form>
             </div>
@@ -89,37 +89,49 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-heading">Customer</h2>
+                        <h2 class="page-heading">Transactions</h2>
 
                         <div class="rates-wrapper rates--full">
                             
                             <table>
+                                <colgroup class="col-width">
+                                <colgroup class="col-width">
                                 <colgroup class="col-width-lg">
                                 <colgroup class="col-width">
-                                <colgroup class="col-width-sm">
-                                <colgroup class="col-width">
 
-                                <tr class="rates rates--top">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">Omar Hassan Akhtar</a></td>
-                                    <td class="rates__vote"> <input type="text" class="search__field" placeholder="Enter Return Date"></td>
-                                    <td class="rates__result">5.0</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
 
-                                <tr class="rates rates--top">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">2. The Book Thief</a></td>
-                                    <td class="rates__vote">163 546 votes</td>
-                                    <td class="rates__result">5.0</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
 
-                                <tr class="rates rates--top">
-                                    <td class="rates__obj"><a href="rates-full.html#" class="rates__obj-name">3. How I Live Now</a></td>
-                                    <td class="rates__vote">843 546 votes</td>
-                                    <td class="rates__result">4.9</td>
-                                    <td class="rates__stars"><div class="score"></div></td>
-                                </tr>
+<tr class="rates rates--top">
+	<td class="rates__head"> Customer Name</td>
+	<td class="rates__head">Borrow Date</td>
+	<td class="rates__head">Movies</td>
+	<td class="rates__result">Confirm</td>
+								</tr>
 
+
+
+								<?php 
+									if(isset($Transactions)) {
+										foreach ($Transactions as $row) {
+											echo "<tr class=\"rates rates--top\">";
+											echo "<form method=\"post\" action=\"/ci/index.php/salesperson/returnm\">";
+                                    echo "<td class=\"rates__vote\"><a href=\"rates-full.html#\" class=\"rates__obj-name\">" . $row['Name']. "</a></td>";
+									echo "<td class=\"rates__vote\">" .	$row['BorrowDate']."</td>";
+									echo "<td class=\"rates__vote\" >";
+										foreach($row['Movies'] as $Movie) {
+											echo "<p>".$Movie."</p>";
+										}
+									echo "</td>";
+									echo "<td class=\"rates__result\">
+										<input type=\"hidden\" name=\"TID\"value=\"".$row['TID']."\">
+										<button class=\"btn\">Return</button></td>";
+									echo "</form>";
+											echo "</tr>";
+										
+										}
+									
+									}
+								?>
                                
 
                             </table>
@@ -151,29 +163,30 @@
 
 	<!-- JavaScript-->
         <!-- jQuery 1.9.1--> 
-        <script src="ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min_5.js"></script>
+        <script src="/ci/scripts/ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min_5.js"></script>
         <script>window.jQuery || document.write('<script src="js/external/jquery-1.10.1.min_5.js"><\/script>')</script>
         <!-- Migrate --> 
-        <script src="js/external/jquery-migrate-1.2.1.min_5.js"></script>
+        <script src="/ci/scripts/js/external/jquery-migrate-1.2.1.min_5.js"></script>
         <!-- Bootstrap 3--> 
-        <script src="netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min_5.js"></script>
+        <script src="/ci/scripts/netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min_5.js"></script>
 
         <!-- Mobile menu -->
-        <script src="js/jquery.mobile.menu_5.js"></script>
+        <script src="/ci/scripts/js/jquery.mobile.menu_5.js"></script>
          <!-- Select -->
-        <script src="js/external/jquery.selectbox-0.2.min_5.js"></script>
+        <script src="/ci/scripts/js/external/jquery.selectbox-0.2.min_5.js"></script>
         <!-- Stars rate -->
-        <script src="js/external/jquery.raty_4.js"></script>
+        <script src="/ci/scripts/js/external/jquery.raty_4.js"></script>
 
         <!-- Form element -->
-        <script src="js/external/form-element_5.js"></script>
+        <script src="/ci/scripts/js/external/form-element_5.js"></script>
         <!-- Form validation -->
-        <script src="js/form_5.js"></script>
+        <script src="/ci/scripts/js/form_5.js"></script>
 
         <!-- Custom -->
-        <script src="js/custom_5.js"></script> 
+        <script src="/ci/scripts/js/custom_5.js"></script> 
 		
 		<script type="text/javascript">
+
             $(document).ready(function() {
                 init_Rates();
             });

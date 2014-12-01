@@ -730,7 +730,8 @@ textarea {
 }
 input,
 textarea {
-  -webkit-appearance: none;
+text-align: center;
+margin-left:10px;
 }
 .devider-wrapper {
   width: 100%;
@@ -5737,11 +5738,16 @@ ul#navigation li.mega-menu__nav-item:hover:before {
 .rates .rates__vote {
   text-align: center;
   font-size: 13px;
+  height:50px;
 }
 .rates .rates__result {
   text-align: center;
   font: 20px 'aleobold', sans-serif;
   background-color: #ffd564;
+}
+.rates .rates__head {
+  text-align: center;
+  font: 20px 'aleobold', sans-serif;
 }
 .rates .rates__stars .score {
   margin-left: 50px;
