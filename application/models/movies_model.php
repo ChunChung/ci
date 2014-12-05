@@ -57,7 +57,7 @@ class Movies_model extends CI_Model {
 	function getMovies() {
 		$result = Array();
 		$query = $this->db->query('
-			SELECT Movie.MovieID, Movie.Duration, Movie.PictureURL FROM Movie Order by Movie.ReleaseDate limit 6 '
+			SELECT Movie.MovieID, Movie.Duration, Movie.PictureURL FROM Movie Order by Movie.ReleaseDate desc limit 6 '
 			);
 		foreach ($query->result() as $row) {
 			$movie =  Array();

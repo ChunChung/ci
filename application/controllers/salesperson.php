@@ -9,11 +9,14 @@ class Salesperson extends CI_Controller {
 		$this->load->library('session');
 		$this->load->library('encrypt');
 		$this->load->helper(array('form', 'url', 'date'));
+		session_start();
+		if($this->session->userdata('login_id')) {
+			$data['salesperson'] = $this->session->userdata('salesperson');
+		}
 	}
 
 	public function addcustomer()
 	{
-		session_start();
 
 		if($this->session->userdata('login_id')) {
 			$this->load->view('addcustomer');
@@ -27,7 +30,6 @@ class Salesperson extends CI_Controller {
 
 	public function sendmovie()
 	{
-		session_start();
 		$this->load->model('Salesperson_model');
 		if($this->session->userdata('login_id')) {
 			$data['type'] = "Error";
@@ -66,7 +68,6 @@ class Salesperson extends CI_Controller {
 
 	public function send() 
 	{
-		session_start();
 		$this->load->model('Salesperson_model');
 		if($this->session->userdata('login_id')) {
 			$data['type'] = "Error";
@@ -102,7 +103,6 @@ class Salesperson extends CI_Controller {
 
 	public function rentmovie() 
 	{
-		session_start();
 		$this->load->model('Salesperson_model');
 
 		if($this->session->userdata('login_id')) {
@@ -121,7 +121,6 @@ class Salesperson extends CI_Controller {
 
 	public function reports()
 	{
-		session_start();
 		if($this->session->userdata('login_id')) {
 			$this->load->model('Salesperson_model');
 
@@ -152,7 +151,6 @@ class Salesperson extends CI_Controller {
 
 	public function returnmovie() 
 	{
-		session_start();
 		$this->load->model('Salesperson_model');
 
 		if($this->session->userdata('login_id')) {
@@ -168,7 +166,6 @@ class Salesperson extends CI_Controller {
 
 	public function moviebycustomer() 
 	{
-		session_start();
 		$this->load->model('Salesperson_model');
 
 		if($this->session->userdata('login_id')) {
@@ -184,7 +181,6 @@ class Salesperson extends CI_Controller {
 
 	public function returnm() 
 	{
-		session_start();
 		$this->load->model('Salesperson_model');
 
 		if($this->session->userdata('login_id')) {

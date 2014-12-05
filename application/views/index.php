@@ -74,7 +74,7 @@
                 <!-- Additional header buttons / Auth and direct link to booking-->
                 <div class="control-panel">
                       <a href="/ci/index.php/login" class="btn btn--sign ">Sign in</a>
-                    <a href="/ci/index.php/login/logout" class="btn btn--sign ">Log out</a>
+                     <a href="/ci/index.php/login/logout" class="btn btn--sign ">Log out</a>
                 </div>
 
             </div>

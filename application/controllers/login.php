@@ -30,6 +30,7 @@ class Login extends CI_Controller {
 		$result = $this->Login_model->getPasswd($this->input->post('inputID'));
 
 		if (isset($result[0]) && $this->input->post('inputPasswd') == $result[0]['sPassword']) {
+			$this->session->set_userdata('salesperson', $this->input->post('FName')." ".$this->input->post('LName'));
 			$this->session->set_userdata('login_id', $this->input->post('inputID'));
 		}
 		redirect('/login');
@@ -40,6 +41,7 @@ class Login extends CI_Controller {
 		session_start();
 		if($this->session->userdata('login_id')) {
 			$this->session->unset_userdata('login_id');
+			$this->session->unset_userdata('salesperson');
 		}
 		redirect('/login');
 	}

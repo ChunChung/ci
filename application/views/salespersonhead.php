@@ -1,4 +1,9 @@
 <div class="control-panel">
+	<?php 
+		if(isset($salesperson)) {
+			echo "Hi, ".$salesperson;
+		};
+	?>
 	<a href="/ci/index.php/salesperson/reports" class="btn btn-md btn--warning btn--book">Reports</a> 
 	<a href="/ci/index.php/salesperson/addcustomer" class="btn btn-md btn--warning btn--book">Add a Customer</a> 
 	<a href="/ci/index.php/salesperson/rentmovie" class="btn btn-md btn--warning btn--book">Rent Movies</a> 
