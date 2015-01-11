@@ -45,4 +45,10 @@ class Login extends CI_Controller {
 		}
 		redirect('/login');
 	}
+
+	public function test()
+	{
+
+		echo "test123";
+	}
 }
